@@ -1,4 +1,4 @@
-/* ===== NAVBAR STYLES ===== */
+/* ===== NAVBAR STYLES (Isolado) ===== */
 .navbar {
   position: fixed;
   top: 0;
@@ -10,6 +10,12 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+}
+
+.navbar * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .navbar-container {
@@ -38,6 +44,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.5px;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Menu */
@@ -60,6 +67,7 @@
   transition: all 0.3s ease;
   border-radius: 6px;
   position: relative;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-link::after {
@@ -109,6 +117,9 @@
   flex-direction: column;
   cursor: pointer;
   gap: 6px;
+  border: none;
+  background: none;
+  padding: 0;
 }
 
 .hamburger span {

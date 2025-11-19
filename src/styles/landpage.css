@@ -1,34 +1,28 @@
-/* CSS MODERNO E OTIMIZADO */
+/* CSS MODERNO E OTIMIZADO - ISOLADO PARA LANDPAGE */
 
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+/* ===== VARIÁVEIS LOCAIS (sem afetar :root global) ===== */
+.landpage-wrapper {
+  --landpage-black: #000;
+  --landpage-gray: #dcdcdc;
+  --landpage-blue: #007edb;
+  --landpage-blue-dark: #0056a1;
+  --landpage-yellow: #f8b400;
+  --landpage-green: #1fa447;
+  --landpage-red: #e7323e;
+  --landpage-text-dark: #1a1a1a;
+  --landpage-text-light: #666;
+  --landpage-bg-light: #f9f9f9;
 }
 
-:root {
-  --black: #000;
-  --gray: #dcdcdc;
-  --blue: #007edb;
-  --blue-dark: #0056a1;
-  --yellow: #f8b400;
-  --green: #1fa447;
-  --red: #e7323e;
-  --text-dark: #1a1a1a;
-  --text-light: #666;
-  --bg-light: #f9f9f9;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+/* ===== ESTILOS ISOLADOS (apenas dentro de .landpage-wrapper) ===== */
 .landpage-wrapper {
   width: 100%;
   overflow-x: hidden;
   background: #fff;
+}
+
+.landpage-wrapper * {
+  scroll-behavior: smooth;
 }
 
 .sobre-container {
@@ -38,7 +32,7 @@ html {
 }
 
 /* ================= HERO ================= */
-.hero {
+.landpage-wrapper .hero {
   position: relative;
   width: 100%;
   height: 600px;
@@ -49,15 +43,15 @@ html {
   background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
 }
 
-.hero-img {
+.landpage-wrapper .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(0.75) contrast(1.1);
-  animation: zoomIn 0.8s ease-out;
+  animation: landpage-zoomIn 0.8s ease-out;
 }
 
-@keyframes zoomIn {
+@keyframes landpage-zoomIn {
   from {
     transform: scale(1.05);
     opacity: 0;
@@ -68,7 +62,7 @@ html {
   }
 }
 
-.hero-text {
+.landpage-wrapper .hero-text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -76,10 +70,10 @@ html {
   text-align: center;
   color: #fff;
   z-index: 10;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
+  animation: landpage-fadeInUp 0.8s ease-out 0.2s both;
 }
 
-@keyframes fadeInUp {
+@keyframes landpage-fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -90,7 +84,7 @@ html {
   }
 }
 
-.hero-text h1 {
+.landpage-wrapper .hero-text h1 {
   font-size: 72px;
   font-weight: 800;
   margin-bottom: 15px;
@@ -98,7 +92,7 @@ html {
   letter-spacing: -1px;
 }
 
-.hero-text p {
+.landpage-wrapper .hero-text p {
   font-size: 28px;
   font-weight: 300;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -106,7 +100,7 @@ html {
 }
 
 /* ============ UNIVERSIDADES → MUNDO ================= */
-.universidades {
+.landpage-wrapper .universidades {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +110,7 @@ html {
   margin: 0 auto;
 }
 
-.universidades-img img {
+.landpage-wrapper .universidades-img img {
   width: 100%;
   max-width: 480px;
   height: auto;
@@ -125,33 +119,33 @@ html {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.universidades-img img:hover {
+.landpage-wrapper .universidades-img img:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 50px rgba(0, 126, 219, 0.2);
 }
 
-.universidades-text {
+.landpage-wrapper .universidades-text {
   flex: 1;
   min-width: 300px;
 }
 
-.universidades-text h2 {
+.landpage-wrapper .universidades-text h2 {
   font-size: 42px;
   font-weight: 800;
   margin-bottom: 25px;
-  color: var(--text-dark);
+  color: var(--landpage-text-dark);
   line-height: 1.2;
 }
 
-.universidades-text p {
+.landpage-wrapper .universidades-text p {
   margin-bottom: 20px;
   line-height: 1.8;
-  color: var(--text-light);
+  color: var(--landpage-text-light);
   font-size: 16px;
 }
 
 /* ================= PROPÓSITO / MISSÃO ================= */
-.proposito-missao {
+.landpage-wrapper .proposito-missao {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 100px 5%;
@@ -160,11 +154,9 @@ html {
   margin: 0 auto;
   background: linear-gradient(135deg, rgba(248, 180, 0, 0.05) 0%, rgba(0, 126, 219, 0.05) 100%);
   border-radius: 20px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.box {
+.landpage-wrapper .box {
   text-align: center;
   padding: 40px;
   border-radius: 16px;
@@ -173,19 +165,19 @@ html {
   transition: all 0.4s ease;
 }
 
-.box:hover {
+.landpage-wrapper .box:hover {
   transform: translateY(-12px);
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
 }
 
-.box h3 {
+.landpage-wrapper .box h3 {
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 25px;
-  color: var(--text-dark);
+  color: var(--landpage-text-dark);
 }
 
-.box img {
+.landpage-wrapper .box img {
   width: 100%;
   max-height: 280px;
   object-fit: cover;
@@ -194,14 +186,14 @@ html {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-.box p {
+.landpage-wrapper .box p {
   line-height: 1.8;
-  color: var(--text-light);
+  color: var(--landpage-text-light);
   font-size: 15px;
 }
 
 /* ================= VALORES ================= */
-.valores {
+.landpage-wrapper .valores {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -211,7 +203,7 @@ html {
   margin: 0 auto;
 }
 
-.valores-img img {
+.landpage-wrapper .valores-img img {
   width: 100%;
   max-width: 480px;
   border-radius: 16px;
@@ -219,31 +211,31 @@ html {
   transition: transform 0.4s ease;
 }
 
-.valores-img img:hover {
+.landpage-wrapper .valores-img img:hover {
   transform: scale(1.03);
 }
 
-.valores-text {
+.landpage-wrapper .valores-text {
   flex: 1;
   min-width: 300px;
 }
 
-.valores-text h3 {
+.landpage-wrapper .valores-text h3 {
   font-size: 42px;
   font-weight: 800;
   margin-bottom: 25px;
-  color: var(--text-dark);
+  color: var(--landpage-text-dark);
   line-height: 1.2;
 }
 
-.valores-text p {
+.landpage-wrapper .valores-text p {
   line-height: 1.8;
-  color: var(--text-light);
+  color: var(--landpage-text-light);
   font-size: 16px;
 }
 
 /* ================= EQUIPE ================= */
-.equipe {
+.landpage-wrapper .equipe {
   padding: 100px 5%;
   text-align: center;
   background: linear-gradient(135deg, rgba(31, 164, 71, 0.05) 0%, rgba(248, 180, 0, 0.05) 100%);
@@ -251,21 +243,21 @@ html {
   margin: 0 auto;
 }
 
-.equipe h2 {
+.landpage-wrapper .equipe h2 {
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 70px;
-  color: var(--text-dark);
+  color: var(--landpage-text-dark);
 }
 
-.equipe-grid {
+.landpage-wrapper .equipe-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 60px;
   justify-items: center;
 }
 
-.equipe-card {
+.landpage-wrapper .equipe-card {
   width: 300px;
   height: 300px;
   background: white;
@@ -278,12 +270,12 @@ html {
   transition: all 0.4s ease;
 }
 
-.equipe-card:hover {
+.landpage-wrapper .equipe-card:hover {
   transform: translateY(-15px);
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
 }
 
-.equipe-foto {
+.landpage-wrapper .equipe-foto {
   width: 160px;
   height: 160px;
   background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
@@ -292,7 +284,7 @@ html {
 }
 
 /* Cores abaixo dos quadrados */
-.equipe-cor {
+.landpage-wrapper .equipe-cor {
   position: absolute;
   bottom: -50px;
   width: 180px;
@@ -302,32 +294,32 @@ html {
 }
 
 /* Garantir a alternância das cores nas 4 posições */
-.equipe-card:nth-child(1) .equipe-cor {
-  background: var(--blue);
+.landpage-wrapper .equipe-card:nth-child(1) .equipe-cor {
+  background: var(--landpage-blue);
 }
 
-.equipe-card:nth-child(2) .equipe-cor {
-  background: var(--yellow);
+.landpage-wrapper .equipe-card:nth-child(2) .equipe-cor {
+  background: var(--landpage-yellow);
 }
 
-.equipe-card:nth-child(3) .equipe-cor {
-  background: var(--green);
+.landpage-wrapper .equipe-card:nth-child(3) .equipe-cor {
+  background: var(--landpage-green);
 }
 
-.equipe-card:nth-child(4) .equipe-cor {
-  background: var(--red);
+.landpage-wrapper .equipe-card:nth-child(4) .equipe-cor {
+  background: var(--landpage-red);
 }
 
 /* ============ RESPONSIVIDADE ============ */
 @media (max-width: 1200px) {
-  .universidades,
-  .valores {
+  .landpage-wrapper .universidades,
+  .landpage-wrapper .valores {
     flex-direction: column;
     padding: 80px 5%;
     gap: 60px;
   }
 
-  .proposito-missao {
+  .landpage-wrapper .proposito-missao {
     padding: 80px 5%;
   }
 }
@@ -337,61 +329,61 @@ html {
     padding-top: 60px;
   }
 
-  .hero {
+  .landpage-wrapper .hero {
     height: 400px;
   }
 
-  .hero-text h1 {
+  .landpage-wrapper .hero-text h1 {
     font-size: 48px;
   }
 
-  .hero-text p {
+  .landpage-wrapper .hero-text p {
     font-size: 20px;
   }
 
-  .universidades-text h2,
-  .valores-text h3 {
+  .landpage-wrapper .universidades-text h2,
+  .landpage-wrapper .valores-text h3 {
     font-size: 32px;
   }
 
-  .universidades-text p,
-  .valores-text p {
+  .landpage-wrapper .universidades-text p,
+  .landpage-wrapper .valores-text p {
     font-size: 15px;
   }
 
-  .proposito-missao {
+  .landpage-wrapper .proposito-missao {
     grid-template-columns: 1fr;
     padding: 60px 5%;
     gap: 30px;
   }
 
-  .box {
+  .landpage-wrapper .box {
     padding: 30px;
   }
 
-  .box h3 {
+  .landpage-wrapper .box h3 {
     font-size: 24px;
   }
 
-  .equipe {
+  .landpage-wrapper .equipe {
     padding: 60px 5%;
   }
 
-  .equipe h2 {
+  .landpage-wrapper .equipe h2 {
     font-size: 36px;
     margin-bottom: 50px;
   }
 
-  .equipe-grid {
+  .landpage-wrapper .equipe-grid {
     gap: 40px;
   }
 
-  .equipe-card {
+  .landpage-wrapper .equipe-card {
     width: 250px;
     height: 250px;
   }
 
-  .equipe-foto {
+  .landpage-wrapper .equipe-foto {
     width: 120px;
     height: 120px;
   }
@@ -402,30 +394,30 @@ html {
     padding-top: 50px;
   }
 
-  .hero {
+  .landpage-wrapper .hero {
     height: 300px;
   }
 
-  .hero-text h1 {
+  .landpage-wrapper .hero-text h1 {
     font-size: 36px;
   }
 
-  .hero-text p {
+  .landpage-wrapper .hero-text p {
     font-size: 16px;
   }
 
-  .universidades-text h2,
-  .valores-text h3,
-  .equipe h2 {
+  .landpage-wrapper .universidades-text h2,
+  .landpage-wrapper .valores-text h3,
+  .landpage-wrapper .equipe h2 {
     font-size: 24px;
   }
 
-  .equipe-grid {
+  .landpage-wrapper .equipe-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .equipe-card {
+  .landpage-wrapper .equipe-card {
     width: 100%;
     max-width: 280px;
   }
